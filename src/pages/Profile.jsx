@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { 
-  HiAcademicCap, 
-  HiBriefcase, 
-  HiCheckCircle, 
+import {
+  HiAcademicCap,
+  HiBriefcase,
+  HiCheckCircle,
   HiUser,
   HiOfficeBuilding,
   HiSparkles,
@@ -31,48 +31,15 @@ const getCoreValueIcon = (title) => {
 
 // 프로필 이미지 표시 컴포넌트
 const ProfileImageDisplay = ({ name }) => {
-  const [imageSrc, setImageSrc] = useState(null);
   const [imageError, setImageError] = useState(false);
+  const basePath = import.meta.env.BASE_URL || '/';
+  const imageSrc = `${basePath}images/profile.png`.replace(/\/\//g, '/');
 
-  useEffect(() => {
-    const extensions = ['png', 'jpg', 'jpeg', 'webp'];
-    let found = false;
-    let checkedCount = 0;
-    
-    // Base path 가져오기 (GitHub Pages 배포 시 /portfolio-website/ 포함)
-    const basePath = import.meta.env.BASE_URL || '/';
-    
-    extensions.forEach((ext) => {
-      if (found) return;
-      
-      // Base path를 포함한 이미지 경로 생성
-      const imgPath = `${basePath}images/profile.${ext}`.replace(/\/\//g, '/');
-      const img = new Image();
-      
-      img.onload = () => {
-        if (!found) {
-          found = true;
-          setImageSrc(imgPath);
-          setImageError(false);
-        }
-      };
-      
-      img.onerror = () => {
-        checkedCount++;
-        if (checkedCount === extensions.length && !found) {
-          setImageError(true);
-        }
-      };
-      
-      img.src = imgPath;
-    });
-  }, []);
-
-  if (imageSrc && !imageError) {
+  if (!imageError) {
     return (
       <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden shadow-xl border-4 border-white mx-auto">
-        <img 
-          src={imageSrc} 
+        <img
+          src={imageSrc}
           alt={name}
           className="w-full h-full object-cover"
           onError={() => setImageError(true)}
@@ -92,10 +59,10 @@ const Profile = () => {
   const [ref1, inView1] = useInView({ triggerOnce: true, threshold: 0.1 });
   const [ref2, inView2] = useInView({ triggerOnce: true, threshold: 0.1 });
   const [ref3, inView3] = useInView({ triggerOnce: true, threshold: 0.1 });
-  
+
   // 주요경력 확장 상태 관리
   const [expandedCareer, setExpandedCareer] = useState(null);
-  
+
   // 핵심가치 호버 상태 관리
   const [hoveredValue, setHoveredValue] = useState(null);
 
@@ -284,7 +251,7 @@ const Profile = () => {
                       <p className="text-secondary-text mb-4">
                         {company.description}
                       </p>
-                      
+
                       {/* 상세보기 버튼 */}
                       <button
                         onClick={() => toggleCareer(company.company)}

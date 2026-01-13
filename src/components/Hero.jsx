@@ -4,7 +4,7 @@ import profileData from '../data/profile.json';
 import scene from '../assets/scene.splinecode';
 
 // Spline 컴포넌트를 lazy loading으로 변경하여 초기 로딩 블로킹 방지
-const Spline = lazy(() => 
+const Spline = lazy(() =>
   import('@splinetool/react-spline').catch(() => {
     // Spline 로딩 실패 시 fallback 컴포넌트 반환
     return { default: () => null };
@@ -27,8 +27,8 @@ const SplineWrapper = ({ scene, onError, onLoad }) => {
   }, [onError]);
 
   return (
-    <Spline 
-      scene={scene} 
+    <Spline
+      scene={scene}
       onError={onError}
       onLoad={onLoad}
     />
@@ -37,49 +37,15 @@ const SplineWrapper = ({ scene, onError, onLoad }) => {
 
 // 프로필 이미지 표시 컴포넌트
 const ProfileImageDisplay = ({ name }) => {
-  const [imageSrc, setImageSrc] = useState(null);
   const [imageError, setImageError] = useState(false);
+  const basePath = import.meta.env.BASE_URL || '/';
+  const imageSrc = `${basePath}images/profile.png`.replace(/\/\//g, '/');
 
-  useEffect(() => {
-    // 이미지 파일 존재 여부 확인 (png 우선, 그 다음 jpg, jpeg, webp)
-    const extensions = ['png', 'jpg', 'jpeg', 'webp'];
-    let found = false;
-    let checkedCount = 0;
-    
-    // Base path 가져오기 (GitHub Pages 배포 시 /portfolio-website/ 포함)
-    const basePath = import.meta.env.BASE_URL || '/';
-    
-    extensions.forEach((ext) => {
-      if (found) return;
-      
-      // Base path를 포함한 이미지 경로 생성
-      const imgPath = `${basePath}images/profile.${ext}`.replace(/\/\//g, '/');
-      const img = new Image();
-      
-      img.onload = () => {
-        if (!found) {
-          found = true;
-          setImageSrc(imgPath);
-          setImageError(false);
-        }
-      };
-      
-      img.onerror = () => {
-        checkedCount++;
-        if (checkedCount === extensions.length && !found) {
-          setImageError(true);
-        }
-      };
-      
-      img.src = imgPath;
-    });
-  }, []); // 의존성 배열을 비워서 한 번만 실행
-
-  if (imageSrc && !imageError) {
+  if (!imageError) {
     return (
       <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden shadow-lg border-4 border-white">
-        <img 
-          src={imageSrc} 
+        <img
+          src={imageSrc}
           alt={name}
           className="w-full h-full object-cover"
           onError={() => setImageError(true)}
@@ -113,22 +79,22 @@ const Hero = () => {
   return (
     <>
       {/* Spline 3D Background - 상단에만 표시 */}
-      <section className="relative w-full h-[60vh] md:h-[70vh] overflow-hidden bg-white">
+      <section className="relative w-full h-[60vh] md:h-[70vh] overflow-hidden bg-black">
         <div className="absolute inset-0 z-0 w-full h-full">
           {!splineError ? (
             <Suspense fallback={
-              <div className="w-full h-full bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center">
-                <div className="text-blue-400 text-sm">3D 모델 로딩 중...</div>
+              <div className="w-full h-full bg-black flex items-center justify-center">
+                <div className="w-8 h-8 border-4 border-gray-600 border-t-white rounded-full animate-spin"></div>
               </div>
             }>
-              <SplineWrapper 
-                scene={scene} 
+              <SplineWrapper
+                scene={scene}
                 onError={handleSplineError}
                 onLoad={handleSplineLoad}
               />
             </Suspense>
           ) : (
-            <div className="w-full h-full bg-gradient-to-br from-blue-50 to-blue-100" />
+            <div className="w-full h-full bg-gradient-to-br from-gray-900 to-black" />
           )}
         </div>
       </section>

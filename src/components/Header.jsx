@@ -6,45 +6,11 @@ import profileData from '../data/profile.json';
 
 // 로고 이미지 표시 컴포넌트
 const LogoDisplay = () => {
-  const [logoSrc, setLogoSrc] = useState(null);
   const [logoError, setLogoError] = useState(false);
+  const basePath = import.meta.env.BASE_URL || '/';
+  const logoSrc = `${basePath}images/logo.png`.replace(/\/\//g, '/');
 
-  useEffect(() => {
-    // 로고 이미지 파일 존재 여부 확인 (png 우선, 그 다음 jpg, jpeg, webp, svg)
-    const extensions = ['png', 'jpg', 'jpeg', 'webp', 'svg'];
-    let found = false;
-    let checkedCount = 0;
-    
-    // Base path 가져오기 (GitHub Pages 배포 시 /portfolio-website/ 포함)
-    const basePath = import.meta.env.BASE_URL || '/';
-    
-    extensions.forEach((ext) => {
-      if (found) return;
-      
-      // Base path를 포함한 이미지 경로 생성
-      const imgPath = `${basePath}images/logo.${ext}`.replace(/\/\//g, '/');
-      const img = new Image();
-      
-      img.onload = () => {
-        if (!found) {
-          found = true;
-          setLogoSrc(imgPath);
-          setLogoError(false);
-        }
-      };
-      
-      img.onerror = () => {
-        checkedCount++;
-        if (checkedCount === extensions.length && !found) {
-          setLogoError(true);
-        }
-      };
-      
-      img.src = imgPath;
-    });
-  }, []); // 의존성 배열을 비워서 한 번만 실행
-
-  if (logoSrc && !logoError) {
+  if (!logoError) {
     return (
       <img 
         src={logoSrc} 
