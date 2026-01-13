@@ -10,8 +10,11 @@ import PublicEnterprise from './pages/PublicEnterprise';
 import Contact from './pages/Contact';
 
 function App() {
+  // GitHub Pages 배포 시에만 basename 사용
+  const basename = import.meta.env.PROD ? '/portfolio-website' : '';
+  
   return (
-    <Router basename="/portfolio-website">
+    <Router basename={basename}>
       <div className="min-h-screen flex flex-col">
         <Header />
         <main className="flex-grow">

@@ -46,10 +46,14 @@ const ProfileImageDisplay = ({ name }) => {
     let found = false;
     let checkedCount = 0;
     
+    // Base path 가져오기 (GitHub Pages 배포 시 /portfolio-website/ 포함)
+    const basePath = import.meta.env.BASE_URL || '/';
+    
     extensions.forEach((ext) => {
       if (found) return;
       
-      const imgPath = `/images/profile.${ext}`;
+      // Base path를 포함한 이미지 경로 생성
+      const imgPath = `${basePath}images/profile.${ext}`.replace(/\/\//g, '/');
       const img = new Image();
       
       img.onload = () => {
