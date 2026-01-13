@@ -1,0 +1,74 @@
+{
+  "name": "박민욱",
+  "nameEn": "Park Min Wook",
+  "title": "AI & 취업경쟁력 전문 강사",
+  "subtitle": "영상 크리에이터 | 이룸아카데미 CEO",
+  "description": "20년 이상의 실무 경험과 교육 노하우를 보유한 종합 컨설팅 전문가입니다. SK텔레콤 모바일사업부에서 11년간 상품기획과 전략마케팅 전문가로 근무하며 쌓은 현장 경험을 바탕으로, 현재는 대학과 기관에서 AI 활용 교육, 취업 컨설팅, 영상 제작 교육을 진행하고 있습니다.",
+  "education": [
+    {
+      "institution": "고려대학교",
+      "degree": "경영학과",
+      "period": ""
+    },
+    {
+      "institution": "세종대학교",
+      "degree": "정보통신공학 석사",
+      "period": ""
+    }
+  ],
+  "career": {
+    "companies": [
+      {
+        "company": "SK텔레콤",
+        "position": "모바일사업부 상품기획 및 전략마케팅",
+        "period": "11년",
+        "description": "상품기획과 전략마케팅 전문가로 근무"
+      }
+    ],
+    "current": {
+      "company": "이룸아카데미",
+      "position": "CEO",
+      "description": "AI 교육 및 취업 컨설팅 전문 교육기관 운영"
+    }
+  },
+  "features": [
+    "실무 중심 교육",
+    "동영상 자료 활용",
+    "맞춤형 커리큘럼",
+    "실습 중심 진행",
+    "최신 트렌드 반영"
+  ],
+  "coreValues": [
+    {
+      "title": "실무 중심",
+      "description": "현장 노하우 전수",
+      "icon": "✅"
+    },
+    {
+      "title": "맞춤형 교육",
+      "description": "커스터마이징 설계",
+      "icon": "✅"
+    },
+    {
+      "title": "최신 트렌드",
+      "description": "AI 역량 교육",
+      "icon": "✅"
+    },
+    {
+      "title": "검증된 실적",
+      "description": "전국 대학 출강",
+      "icon": "✅"
+    }
+  ],
+  "contact": {
+    "email": "irum.ceo@gmail.com",
+    "phone": "010-5688-7045",
+    "address": "서울특별시 강남구 도산대로54길 41, 401호"
+  },
+  "featuredVideo": {
+    "title": "SORA2 AI 영상 샘플",
+    "url": "https://www.youtube.com/embed/E8JCHhUZQ-k"
+  }
+}
+
+

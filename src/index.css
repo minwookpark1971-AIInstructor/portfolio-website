@@ -1,0 +1,56 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary-bg: #FFFFFF;
+    --color-primary-text: #1A1A1A;
+    --color-primary-accent: #2563EB;
+    --color-secondary-bg: #F8F9FA;
+    --color-secondary-text: #666666;
+    --color-secondary-accent: #10B981;
+  }
+  
+  * {
+    @apply box-border;
+  }
+  
+  body {
+    @apply bg-white font-sans antialiased;
+    color: var(--color-primary-text);
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1 {
+    @apply text-5xl font-bold;
+  }
+  
+  h2 {
+    @apply text-4xl font-bold;
+  }
+  
+  h3 {
+    @apply text-2xl font-bold;
+  }
+  
+  p {
+    @apply text-base leading-relaxed;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary-accent text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-blue-700 hover:-translate-y-0.5 hover:shadow-lg;
+  }
+  
+  .btn-secondary {
+    @apply bg-white text-primary-accent border-2 border-primary-accent px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-primary-accent hover:text-white;
+  }
+  
+  .card {
+    @apply bg-white rounded-2xl p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl;
+  }
+}
