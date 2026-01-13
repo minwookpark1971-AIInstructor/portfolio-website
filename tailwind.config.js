@@ -9,10 +9,10 @@ export default {
       colors: {
         'primary-bg': '#FFFFFF',
         'primary-text': '#1A1A1A',
-        'primary-accent': '#2563EB',
+        'primary-accent': '#38BDF8',
         'secondary-bg': '#F8F9FA',
         'secondary-text': '#666666',
-        'secondary-accent': '#10B981',
+        'secondary-accent': '#38BDF8',
       },
       fontFamily: {
         sans: ['Pretendard', 'Noto Sans KR', 'sans-serif'],

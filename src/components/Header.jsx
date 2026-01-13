@@ -1,8 +1,68 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { HiMenu, HiX } from 'react-icons/hi';
 import { motion, AnimatePresence } from 'framer-motion';
 import profileData from '../data/profile.json';
+
+// 로고 이미지 표시 컴포넌트
+const LogoDisplay = () => {
+  const [logoSrc, setLogoSrc] = useState(null);
+  const [logoError, setLogoError] = useState(false);
+
+  useEffect(() => {
+    // 로고 이미지 파일 존재 여부 확인 (png 우선, 그 다음 jpg, jpeg, webp, svg)
+    const extensions = ['png', 'jpg', 'jpeg', 'webp', 'svg'];
+    let found = false;
+    let checkedCount = 0;
+    
+    extensions.forEach((ext) => {
+      if (found) return;
+      
+      const imgPath = `/images/logo.${ext}`;
+      const img = new Image();
+      
+      img.onload = () => {
+        if (!found) {
+          found = true;
+          setLogoSrc(imgPath);
+          setLogoError(false);
+        }
+      };
+      
+      img.onerror = () => {
+        checkedCount++;
+        if (checkedCount === extensions.length && !found) {
+          setLogoError(true);
+        }
+      };
+      
+      img.src = imgPath;
+    });
+  }, []); // 의존성 배열을 비워서 한 번만 실행
+
+  if (logoSrc && !logoError) {
+    return (
+      <img 
+        src={logoSrc} 
+        alt={`${profileData.name} - ${profileData.title}`}
+        className="h-12 md:h-14 w-auto object-contain"
+        onError={() => setLogoError(true)}
+      />
+    );
+  }
+
+  // 이미지가 없으면 텍스트 로고 표시
+  return (
+    <div className="flex flex-col">
+      <span className="text-xl font-bold text-primary-text">
+        {profileData.name}
+      </span>
+      <span className="text-sm text-secondary-text">
+        {profileData.title}
+      </span>
+    </div>
+  );
+};
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,24 +72,24 @@ const Header = () => {
     { path: '/', label: '홈' },
     { path: '/profile', label: '프로필' },
     { path: '/expertise', label: '강의분야' },
-    { path: '/portfolio', label: '실적' },
-    { path: '/contact', label: '연락' },
+    { path: '/portfolio', label: '주요 강의이력' },
+    { path: '/contact', label: '문의하기' },
   ];
 
-  const isActive = (path) => location.pathname === path;
+  const isActive = (path) => {
+    if (path === '/portfolio') {
+      return location.pathname.startsWith('/portfolio');
+    }
+    return location.pathname === path;
+  };
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow-sm">
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex flex-col">
-            <span className="text-xl font-bold text-primary-text">
-              {profileData.name}
-            </span>
-            <span className="text-sm text-secondary-text">
-              {profileData.title}
-            </span>
+          <Link to="/" className="flex items-center">
+            <LogoDisplay />
           </Link>
 
           {/* Desktop Menu */}
@@ -40,8 +100,8 @@ const Header = () => {
                 to={item.path}
                 className={`px-4 py-2 rounded-lg transition-colors duration-200 ${
                   isActive(item.path)
-                    ? 'text-primary-accent font-semibold bg-blue-50'
-                    : 'text-secondary-text hover:text-primary-accent'
+                    ? 'text-sky-700 font-semibold bg-sky-100 border border-sky-300'
+                    : 'text-secondary-text hover:text-sky-600 hover:bg-sky-50'
                 }`}
               >
                 {item.label}
@@ -80,8 +140,8 @@ const Header = () => {
                     onClick={() => setIsMenuOpen(false)}
                     className={`px-4 py-3 rounded-lg transition-colors duration-200 ${
                       isActive(item.path)
-                        ? 'text-primary-accent font-semibold bg-blue-50'
-                        : 'text-secondary-text hover:text-primary-accent hover:bg-gray-50'
+                        ? 'text-gray-700 font-semibold bg-gray-100 border border-gray-300'
+                        : 'text-secondary-text hover:text-gray-700 hover:bg-gray-50'
                     }`}
                   >
                     {item.label}

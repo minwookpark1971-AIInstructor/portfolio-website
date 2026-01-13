@@ -76,7 +76,7 @@ const ContactForm = () => {
             value={formData.name}
             onChange={handleChange}
             required
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-accent focus:border-transparent outline-none transition-all"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-400 focus:border-transparent outline-none transition-all"
             placeholder="이름을 입력하세요"
           />
         </div>
@@ -95,7 +95,7 @@ const ContactForm = () => {
             value={formData.email}
             onChange={handleChange}
             required
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-accent focus:border-transparent outline-none transition-all"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-400 focus:border-transparent outline-none transition-all"
             placeholder="email@example.com"
           />
         </div>
@@ -114,7 +114,7 @@ const ContactForm = () => {
           name="organization"
           value={formData.organization}
           onChange={handleChange}
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-accent focus:border-transparent outline-none transition-all"
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-400 focus:border-transparent outline-none transition-all"
           placeholder="소속 기관 또는 회사명"
         />
       </div>
@@ -133,7 +133,7 @@ const ContactForm = () => {
           value={formData.purpose}
           onChange={handleChange}
           required
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-accent focus:border-transparent outline-none transition-all"
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-400 focus:border-transparent outline-none transition-all"
           placeholder="예: AI 교육, 취업 컨설팅 등"
         />
       </div>
@@ -151,7 +151,7 @@ const ContactForm = () => {
           name="date"
           value={formData.date}
           onChange={handleChange}
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-accent focus:border-transparent outline-none transition-all"
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-400 focus:border-transparent outline-none transition-all"
           placeholder="예: 2024년 3월 중순"
         />
       </div>
@@ -170,7 +170,7 @@ const ContactForm = () => {
           onChange={handleChange}
           required
           rows="6"
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-accent focus:border-transparent outline-none transition-all resize-none"
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-400 focus:border-gray-500 outline-none transition-all resize-none"
           placeholder="강의 목적, 대상자, 예상 인원 등 상세 내용을 입력하세요"
         />
       </div>

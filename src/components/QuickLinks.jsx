@@ -39,13 +39,7 @@ const QuickLinks = () => {
             >
               <Link
                 to={link.path}
-                className={`block text-center py-4 px-8 rounded-lg font-semibold transition-all duration-300 ${
-                  link.variant === 'primary'
-                    ? 'btn-primary'
-                    : link.variant === 'accent'
-                    ? 'bg-secondary-accent text-white hover:bg-green-600 hover:-translate-y-0.5 hover:shadow-lg'
-                    : 'btn-secondary'
-                }`}
+                className="block text-center py-4 px-8 rounded-lg font-semibold transition-all duration-300 border-2 border-sky-300 text-sky-600 hover:bg-sky-100 hover:border-sky-400"
               >
                 {link.label}
               </Link>

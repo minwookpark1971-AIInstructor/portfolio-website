@@ -5,6 +5,8 @@ import Home from './pages/Home';
 import Profile from './pages/Profile';
 import Expertise from './pages/Expertise';
 import Portfolio from './pages/Portfolio';
+import Universities from './pages/Universities';
+import PublicEnterprise from './pages/PublicEnterprise';
 import Contact from './pages/Contact';
 
 function App() {
@@ -18,6 +20,8 @@ function App() {
             <Route path="/profile" element={<Profile />} />
             <Route path="/expertise" element={<Expertise />} />
             <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/portfolio/universities" element={<Universities />} />
+            <Route path="/portfolio/public-enterprise" element={<PublicEnterprise />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>

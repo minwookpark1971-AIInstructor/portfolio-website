@@ -29,7 +29,7 @@ const Contact = () => {
           className="text-center mb-16"
         >
           <h1 className="text-4xl md:text-5xl font-bold text-primary-text mb-4">
-            연락
+            문의하기
           </h1>
           <p className="text-lg text-secondary-text">
             강의 문의 및 상담 신청
@@ -52,12 +52,12 @@ const Contact = () => {
               </h2>
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
-                  <HiMail className="w-6 h-6 text-primary-accent mt-1 flex-shrink-0" />
+                  <HiMail className="w-6 h-6 text-sky-500 mt-1 flex-shrink-0" />
                   <div>
                     <p className="text-sm text-secondary-text mb-1">이메일</p>
                     <a
                       href={`mailto:${profileData.contact.email}`}
-                      className="text-primary-text hover:text-primary-accent transition-colors font-semibold"
+                      className="text-primary-text hover:text-sky-600 transition-colors font-semibold"
                     >
                       {profileData.contact.email}
                     </a>
@@ -65,12 +65,12 @@ const Contact = () => {
                 </div>
 
                 <div className="flex items-start space-x-3">
-                  <HiPhone className="w-6 h-6 text-primary-accent mt-1 flex-shrink-0" />
+                  <HiPhone className="w-6 h-6 text-sky-500 mt-1 flex-shrink-0" />
                   <div>
                     <p className="text-sm text-secondary-text mb-1">전화번호</p>
                     <a
                       href={`tel:${profileData.contact.phone}`}
-                      className="text-primary-text hover:text-primary-accent transition-colors font-semibold"
+                      className="text-primary-text hover:text-sky-600 transition-colors font-semibold"
                     >
                       {profileData.contact.phone}
                     </a>
@@ -78,7 +78,7 @@ const Contact = () => {
                 </div>
 
                 <div className="flex items-start space-x-3">
-                  <HiLocationMarker className="w-6 h-6 text-primary-accent mt-1 flex-shrink-0" />
+                  <HiLocationMarker className="w-6 h-6 text-sky-500 mt-1 flex-shrink-0" />
                   <div>
                     <p className="text-sm text-secondary-text mb-1">주소</p>
                     <p className="text-primary-text font-semibold">
@@ -109,7 +109,7 @@ const Contact = () => {
                     transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
                     className="flex items-start space-x-3"
                   >
-                    <div className="flex-shrink-0 w-8 h-8 bg-primary-accent text-white rounded-full flex items-center justify-center font-bold text-sm">
+                    <div className="flex-shrink-0 w-8 h-8 bg-sky-500 text-white rounded-full flex items-center justify-center font-bold text-sm border border-sky-600">
                       {index + 1}
                     </div>
                     <p className="text-secondary-text pt-1">{step}</p>
