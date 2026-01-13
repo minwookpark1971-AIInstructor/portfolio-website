@@ -11,7 +11,7 @@ import Contact from './pages/Contact';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/portfolio-website">
       <div className="min-h-screen flex flex-col">
         <Header />
         <main className="flex-grow">

@@ -30,6 +30,30 @@ npm run build
 npm run preview
 ```
 
+## 🚀 GitHub Pages 배포
+
+이 프로젝트는 GitHub Pages에 자동으로 배포되도록 설정되어 있습니다.
+
+### 배포 방법
+
+1. **GitHub 저장소 설정**
+   - GitHub 저장소의 Settings > Pages로 이동
+   - Source를 "GitHub Actions"로 설정
+
+2. **자동 배포**
+   - `main` 브랜치에 푸시하면 자동으로 배포됩니다
+   - `.github/workflows/deploy.yml` 파일이 자동 배포를 처리합니다
+
+3. **배포 확인**
+   - Actions 탭에서 배포 상태를 확인할 수 있습니다
+   - 배포 완료 후 `https://[사용자명].github.io/portfolio-website/`에서 확인 가능
+
+### 중요 설정
+
+- **Base Path**: `/portfolio-website/`로 설정되어 있습니다
+- **404.html**: React Router SPA 라우팅을 위해 `public/404.html`이 필요합니다
+- **React Router Basename**: `/portfolio-website`로 설정되어 있습니다
+
 ## 📁 프로젝트 구조
 
 ```
