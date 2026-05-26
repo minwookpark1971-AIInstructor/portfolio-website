@@ -98,25 +98,26 @@ const Hero = () => {
           )}
         </div>
 
-        {/* Value proposition overlay */}
+      </section>
+
+      {/* Tagline band - Spline 바로 아래 다크 밴드 */}
+      <section className="relative w-full bg-black overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-sky-900/30 via-transparent to-transparent" />
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="absolute inset-0 z-10 flex items-end md:items-center pointer-events-none"
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="relative container mx-auto px-6 md:px-10 py-10 md:py-14"
         >
-          <div className="container mx-auto px-6 md:px-10 pb-10 md:pb-0">
-            <p className="text-sky-300 text-sm md:text-base font-semibold tracking-wide mb-2 drop-shadow-lg">
-              IRUM ACADEMY
-            </p>
-            <h2 className="text-white text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight drop-shadow-2xl max-w-3xl">
-              현장 11년,<br className="md:hidden" />
-              <span className="text-sky-300"> 실무가 만드는</span> AI 교육
-            </h2>
-            <p className="text-white/90 text-base md:text-xl font-medium mt-4 drop-shadow-lg">
-              박민욱 · AI &amp; 취업경쟁력 전문 강사
-            </p>
-          </div>
+          <p className="text-sky-400 text-xs md:text-sm font-semibold tracking-[0.2em] mb-3">
+            IRUM ACADEMY
+          </p>
+          <h2 className="text-white text-2xl md:text-4xl lg:text-5xl font-extrabold leading-tight max-w-4xl">
+            현장 11년, <span className="text-sky-300">실무가 만드는</span> AI 교육
+          </h2>
+          <p className="text-white/70 text-sm md:text-lg font-medium mt-3 md:mt-4">
+            박민욱 · AI &amp; 취업경쟁력 전문 강사
+          </p>
         </motion.div>
       </section>
 
