@@ -27,28 +27,24 @@ const ContactForm = () => {
     setSubmitStatus(null);
 
     try {
-      // EmailJS 설정 필요 - 실제 사용 시 환경 변수로 관리
-      // const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-      // const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-      // const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-      // await emailjs.send(serviceId, templateId, formData, publicKey);
+      await emailjs.send(serviceId, templateId, formData, publicKey);
 
-      // 임시로 성공 메시지 표시 (실제 연동 시 위 코드 사용)
-      setTimeout(() => {
-        setSubmitStatus('success');
-        setIsSubmitting(false);
-        setFormData({
-          name: '',
-          email: '',
-          organization: '',
-          purpose: '',
-          date: '',
-          message: '',
-        });
-      }, 1000);
+      setSubmitStatus('success');
+      setFormData({
+        name: '',
+        email: '',
+        organization: '',
+        purpose: '',
+        date: '',
+        message: '',
+      });
     } catch (error) {
       setSubmitStatus('error');
+    } finally {
       setIsSubmitting(false);
     }
   };
