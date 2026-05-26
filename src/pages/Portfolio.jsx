@@ -11,6 +11,8 @@ const Portfolio = () => {
     { id: 'main', label: '주요 강의이력', path: '/portfolio' },
     { id: 'universities', label: '대학', path: '/portfolio/universities' },
     { id: 'public-enterprise', label: '공공기관 & 기업', path: '/portfolio/public-enterprise' },
+    { id: 'schools', label: '초중고 & 교사연수', path: '/portfolio/schools' },
+    { id: 'judging', label: '심사 & 컨설팅', path: '/portfolio/judging' },
   ];
 
   return (

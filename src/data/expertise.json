@@ -49,26 +49,6 @@
       ]
     },
     {
-      "id": "video-production",
-      "title": "영상 제작",
-      "icon": "🎬",
-      "description": "AI 기반 영상 제작 및 편집 교육",
-      "programs": [
-        {
-          "name": "AI 영상 편집",
-          "description": "CapCut, Premiere Pro를 활용한 전문 영상 편집"
-        },
-        {
-          "name": "전문 영상 촬영",
-          "description": "프로페셔널 영상 촬영 기법 및 장비 활용"
-        },
-        {
-          "name": "홍보영상 제작",
-          "description": "기업 및 기관 홍보영상 기획 및 제작"
-        }
-      ]
-    },
-    {
       "id": "startup-marketing",
       "title": "창업 & 마케팅",
       "icon": "🚀",
@@ -87,8 +67,26 @@
           "description": "AI 도구를 활용한 시장 조사 및 분석"
         }
       ]
+    },
+    {
+      "id": "video-production",
+      "title": "영상 제작",
+      "icon": "🎬",
+      "description": "AI 기반 영상 제작 및 편집 교육",
+      "programs": [
+        {
+          "name": "AI 영상 편집",
+          "description": "CapCut, Premiere Pro를 활용한 전문 영상 편집"
+        },
+        {
+          "name": "전문 영상 촬영",
+          "description": "프로페셔널 영상 촬영 기법 및 장비 활용"
+        },
+        {
+          "name": "홍보영상 제작",
+          "description": "기업 및 기관 홍보영상 기획 및 제작"
+        }
+      ]
     }
   ]
 }
-
-

@@ -7,6 +7,8 @@ import Expertise from './pages/Expertise';
 import Portfolio from './pages/Portfolio';
 import Universities from './pages/Universities';
 import PublicEnterprise from './pages/PublicEnterprise';
+import Schools from './pages/Schools';
+import JudgingConsulting from './pages/JudgingConsulting';
 import Contact from './pages/Contact';
 
 function App() {
@@ -25,6 +27,8 @@ function App() {
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/portfolio/universities" element={<Universities />} />
             <Route path="/portfolio/public-enterprise" element={<PublicEnterprise />} />
+            <Route path="/portfolio/schools" element={<Schools />} />
+            <Route path="/portfolio/judging" element={<JudgingConsulting />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>

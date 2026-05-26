@@ -97,6 +97,27 @@ const Hero = () => {
             <div className="w-full h-full bg-gradient-to-br from-gray-900 to-black" />
           )}
         </div>
+
+        {/* Value proposition overlay */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="absolute inset-0 z-10 flex items-end md:items-center pointer-events-none"
+        >
+          <div className="container mx-auto px-6 md:px-10 pb-10 md:pb-0">
+            <p className="text-sky-300 text-sm md:text-base font-semibold tracking-wide mb-2 drop-shadow-lg">
+              IRUM ACADEMY
+            </p>
+            <h2 className="text-white text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight drop-shadow-2xl max-w-3xl">
+              현장 11년,<br className="md:hidden" />
+              <span className="text-sky-300"> 실무가 만드는</span> AI 교육
+            </h2>
+            <p className="text-white/90 text-base md:text-xl font-medium mt-4 drop-shadow-lg">
+              박민욱 · AI &amp; 취업경쟁력 전문 강사
+            </p>
+          </div>
+        </motion.div>
       </section>
 
       {/* Content Area - Spline 아래에 일반 흐름으로 배치 */}

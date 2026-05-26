@@ -110,8 +110,8 @@ const Header = () => {
                     onClick={() => setIsMenuOpen(false)}
                     className={`px-4 py-3 rounded-lg transition-colors duration-200 ${
                       isActive(item.path)
-                        ? 'text-gray-700 font-semibold bg-gray-100 border border-gray-300'
-                        : 'text-secondary-text hover:text-gray-700 hover:bg-gray-50'
+                        ? 'text-sky-700 font-semibold bg-sky-100 border border-sky-300'
+                        : 'text-secondary-text hover:text-sky-600 hover:bg-sky-50'
                     }`}
                   >
                     {item.label}

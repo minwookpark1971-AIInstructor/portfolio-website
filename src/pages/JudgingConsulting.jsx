@@ -2,7 +2,9 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import portfolioData from '../data/portfolio.json';
 
-const PublicEnterprise = () => {
+const JC_TYPES = ['심사', '컨설팅'];
+
+const JudgingConsulting = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-secondary-bg py-12 md:py-20 px-4">
       <div className="container mx-auto max-w-6xl">
@@ -14,10 +16,10 @@ const PublicEnterprise = () => {
           className="text-center mb-12"
         >
           <h1 className="text-4xl md:text-5xl font-bold text-primary-text mb-4">
-            공공기관 & 기업 실적
+            심사 & 컨설팅
           </h1>
           <p className="text-lg text-secondary-text">
-            공공기관 및 기업 출강 실적 및 교육 프로그램
+            창업캠프 심사·자기소개서 컨설팅 등 전문 위촉 활동
           </p>
         </motion.div>
 
@@ -29,12 +31,9 @@ const PublicEnterprise = () => {
               threshold: 0.1,
             });
 
-            // 공공기관 & 기업 실적만 필터링 (공공기관·정부기관·기업)
-            const publicEnterpriseEvents = item.events.filter(
-              event => event.type === '공공기관' || event.type === '정부기관' || event.type === '기업'
-            );
+            const jcEvents = item.events.filter((event) => JC_TYPES.includes(event.type));
 
-            if (publicEnterpriseEvents.length === 0) return null;
+            if (jcEvents.length === 0) return null;
 
             return (
               <motion.div
@@ -48,15 +47,13 @@ const PublicEnterprise = () => {
                 {/* Date */}
                 <div className="md:w-32 flex-shrink-0 mb-4 md:mb-0">
                   <div className="sticky top-20">
-                      <h3 className="text-xl font-bold text-sky-600">
-                      {item.month}
-                    </h3>
+                    <h3 className="text-xl font-bold text-sky-600">{item.month}</h3>
                   </div>
                 </div>
 
                 {/* Events */}
                 <div className="flex-1 space-y-4">
-                  {publicEnterpriseEvents.map((event, eventIndex) => (
+                  {jcEvents.map((event, eventIndex) => (
                     <motion.div
                       key={eventIndex}
                       initial={{ opacity: 0, y: 20 }}
@@ -65,15 +62,13 @@ const PublicEnterprise = () => {
                         duration: 0.5,
                         delay: index * 0.1 + eventIndex * 0.1,
                       }}
-                        className="card bg-white relative pl-8 border-l-4 border-sky-400 hover:shadow-lg transition-shadow"
+                      className="card bg-white relative pl-8 border-l-4 border-sky-400 hover:shadow-lg transition-shadow"
                     >
-                        <span className="absolute -left-2 top-4 w-4 h-4 bg-sky-400 rounded-full border border-sky-500"></span>
+                      <span className="absolute -left-2 top-4 w-4 h-4 bg-sky-400 rounded-full border border-sky-500"></span>
                       <h4 className="text-xl font-semibold text-primary-text mb-2">
                         {event.title}
                       </h4>
-                      <p className="text-secondary-text mb-3">
-                        {event.description}
-                      </p>
+                      <p className="text-secondary-text mb-3">{event.description}</p>
                       {event.details && event.details.length > 0 && (
                         <ul className="space-y-2 mb-3">
                           {event.details.map((detail, detailIndex) => (
@@ -81,14 +76,14 @@ const PublicEnterprise = () => {
                               key={detailIndex}
                               className="flex items-start text-sm text-secondary-text"
                             >
-                                <span className="text-sky-500 mr-2">•</span>
+                              <span className="text-sky-500 mr-2">•</span>
                               <span>{detail}</span>
                             </li>
                           ))}
                         </ul>
                       )}
                       <div className="flex flex-wrap gap-2">
-                          <span className="px-3 py-1 bg-sky-100 text-sky-600 rounded-full text-sm font-semibold border border-sky-300">
+                        <span className="px-3 py-1 bg-sky-100 text-sky-600 rounded-full text-sm font-semibold border border-sky-300">
                           {event.type}
                         </span>
                         <span className="px-3 py-1 bg-sky-100 text-secondary-text rounded-full text-sm">
@@ -107,4 +102,4 @@ const PublicEnterprise = () => {
   );
 };
 
-export default PublicEnterprise;
+export default JudgingConsulting;

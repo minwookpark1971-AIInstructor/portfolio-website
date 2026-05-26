@@ -4,6 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
 import { HiChevronDown, HiChevronUp, HiChevronRight } from 'react-icons/hi';
 import expertiseData from '../data/expertise.json';
+import ProfileGallery from '../components/ProfileGallery';
 
 const Expertise = () => {
   const [expandedCategory, setExpandedCategory] = useState(null);
@@ -182,6 +183,9 @@ const Expertise = () => {
             전문 분야별 맞춤형 교육 프로그램
           </p>
         </motion.div>
+
+        {/* Profile PDF Gallery */}
+        <ProfileGallery />
 
         {/* Categories */}
         <div className="space-y-6">
