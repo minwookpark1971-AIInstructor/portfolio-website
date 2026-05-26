@@ -70,7 +70,7 @@ const Header = () => {
                 to={item.path}
                 className={`px-4 py-2 rounded-lg transition-colors duration-200 ${
                   isActive(item.path)
-                    ? 'text-sky-700 font-semibold bg-sky-100 border border-sky-300'
+                    ? 'text-gray-900 font-semibold bg-gray-200 border border-gray-400'
                     : 'text-secondary-text hover:text-sky-600 hover:bg-sky-50'
                 }`}
               >
@@ -110,7 +110,7 @@ const Header = () => {
                     onClick={() => setIsMenuOpen(false)}
                     className={`px-4 py-3 rounded-lg transition-colors duration-200 ${
                       isActive(item.path)
-                        ? 'text-sky-700 font-semibold bg-sky-100 border border-sky-300'
+                        ? 'text-gray-900 font-semibold bg-gray-200 border border-gray-400'
                         : 'text-secondary-text hover:text-sky-600 hover:bg-sky-50'
                     }`}
                   >

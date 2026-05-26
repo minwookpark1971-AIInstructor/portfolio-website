@@ -80,7 +80,7 @@ const Portfolio = () => {
               to={tab.path}
               className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
                 location.pathname === tab.path
-                  ? 'bg-sky-500 text-white shadow-lg border border-sky-600'
+                  ? 'bg-gray-200 text-gray-900 shadow-lg border border-gray-400'
                   : 'bg-white text-secondary-text hover:bg-sky-100 shadow-md'
               }`}
             >
