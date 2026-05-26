@@ -1,8 +1,7 @@
 import { useState, useEffect, Suspense, lazy } from 'react';
 import { motion } from 'framer-motion';
 import profileData from '../data/profile.json';
-
-const SPLINE_SCENE_URL = '';
+import scene from '../assets/scene.splinecode';
 
 // Spline 컴포넌트를 lazy loading으로 변경하여 초기 로딩 블로킹 방지
 const Spline = lazy(() =>
@@ -48,7 +47,7 @@ const ProfileImageDisplay = ({ name }) => {
         <img
           src={imageSrc}
           alt={name}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-top"
           onError={() => setImageError(true)}
         />
       </div>
@@ -63,7 +62,7 @@ const ProfileImageDisplay = ({ name }) => {
 };
 
 const Hero = () => {
-  const [splineError, setSplineError] = useState(!SPLINE_SCENE_URL);
+  const [splineError, setSplineError] = useState(false);
   const [splineLoaded, setSplineLoaded] = useState(false);
 
   // 타임아웃 제거 - Spline이 계속 로딩되도록 유지
@@ -89,7 +88,7 @@ const Hero = () => {
               </div>
             }>
               <SplineWrapper
-                scene={SPLINE_SCENE_URL}
+                scene={scene}
                 onError={handleSplineError}
                 onLoad={handleSplineLoad}
               />
