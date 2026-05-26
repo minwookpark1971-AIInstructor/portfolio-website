@@ -1,1 +1,1 @@
-export const PROFILE_GALLERY_TOTAL_PAGES = 15;
+export const PROFILE_GALLERY_TOTAL_PAGES = 4;

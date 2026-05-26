@@ -35,8 +35,8 @@ const ProfileGallery = () => {
       </div>
 
       <div className="relative max-w-4xl mx-auto">
-        {/* Image card */}
-        <div className="relative bg-white rounded-lg shadow-xl overflow-hidden aspect-[4/5] md:aspect-[3/4]">
+        {/* Image card - 16:9 ratio */}
+        <div className="relative bg-white rounded-lg shadow-xl overflow-hidden aspect-video">
           <AnimatePresence initial={false} mode="wait" custom={direction}>
             {!imageError ? (
               <motion.img
@@ -47,7 +47,7 @@ const ProfileGallery = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -direction * 30 }}
                 transition={{ duration: 0.35 }}
-                className="absolute inset-0 w-full h-full object-contain bg-secondary-bg"
+                className="absolute inset-0 w-full h-full object-cover bg-secondary-bg"
                 onError={() => setImageError(true)}
               />
             ) : (
