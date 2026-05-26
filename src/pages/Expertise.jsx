@@ -168,7 +168,7 @@ const Expertise = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-secondary-bg py-12 md:py-20 px-4">
-      <div className="container mx-auto max-w-6xl">
+      <div className="container mx-auto max-w-[88rem]">
         {/* Page Title */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -332,16 +332,16 @@ const Expertise = () => {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="mt-16 text-center"
         >
-          <div className="card bg-gradient-to-r from-primary-accent to-blue-600 text-white">
+          <div className="card bg-gray-100 border border-gray-400 text-primary-text">
             <h3 className="text-2xl font-bold mb-4">
               맞춤형 강의 프로그램이 필요하신가요?
             </h3>
-            <p className="mb-6 text-sky-200">
+            <p className="mb-6 text-secondary-text">
               기관 및 기업의 특성에 맞는 커스터마이징 강의를 제공합니다.
             </p>
             <Link
               to="/contact"
-              className="inline-block bg-white text-sky-600 px-8 py-3 rounded-lg font-semibold hover:bg-sky-100 transition-colors border-2 border-sky-400"
+              className="inline-block bg-white text-primary-text px-8 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors border-2 border-gray-400"
             >
               강의 문의하기
             </Link>

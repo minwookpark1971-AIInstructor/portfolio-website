@@ -34,7 +34,7 @@ const ProfileGallery = () => {
         </p>
       </div>
 
-      <div className="relative max-w-4xl mx-auto">
+      <div className="relative max-w-[84rem] mx-auto">
         {/* Image card - 16:9 ratio */}
         <div className="relative bg-white rounded-lg shadow-xl overflow-hidden aspect-video">
           <AnimatePresence initial={false} mode="wait" custom={direction}>
