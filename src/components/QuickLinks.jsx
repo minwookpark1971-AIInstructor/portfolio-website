@@ -17,7 +17,7 @@ const QuickLinks = () => {
 
   return (
     <section ref={ref} className="py-20 px-4 bg-white">
-      <div className="container mx-auto max-w-4xl">
+      <div className="container mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -29,7 +29,7 @@ const QuickLinks = () => {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
           {links.map((link, index) => (
             <motion.div
               key={link.path}
@@ -39,7 +39,7 @@ const QuickLinks = () => {
             >
               <Link
                 to={link.path}
-                className="block text-center py-4 px-8 rounded-lg font-semibold transition-all duration-300 border-2 border-sky-300 text-sky-600 hover:bg-sky-100 hover:border-sky-400"
+                className="block text-center py-6 px-4 rounded-lg font-semibold transition-all duration-300 bg-white border-2 border-gray-300 text-primary-text shadow-sm hover:bg-gray-100 hover:border-gray-500 hover:shadow-md hover:-translate-y-0.5"
               >
                 {link.label}
               </Link>
