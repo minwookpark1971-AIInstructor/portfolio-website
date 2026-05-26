@@ -170,7 +170,7 @@ const Profile = () => {
         >
           <div className="card bg-white shadow-lg">
             <div className="flex items-center mb-6 pb-4 border-b border-gray-200">
-              <div className="p-3 bg-sky-100 rounded-lg mr-4 border border-sky-300">
+              <div className="p-3 bg-gray-100 rounded-lg mr-4 border border-gray-400">
                 <HiAcademicCap className="w-8 h-8 text-sky-500" />
               </div>
               <h2 className="text-3xl font-bold text-primary-text">학력</h2>
@@ -212,7 +212,7 @@ const Profile = () => {
         >
           <div className="card bg-white shadow-lg">
             <div className="flex items-center mb-6 pb-4 border-b border-gray-200">
-              <div className="p-3 bg-sky-100 rounded-lg mr-4 border border-sky-300">
+              <div className="p-3 bg-gray-100 rounded-lg mr-4 border border-gray-400">
                 <HiBriefcase className="w-8 h-8 text-sky-500" />
               </div>
               <h2 className="text-3xl font-bold text-primary-text">주요 경력</h2>
@@ -386,7 +386,7 @@ const Profile = () => {
           animate={inView3 ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <div className="card bg-sky-100 shadow-lg">
+          <div className="card bg-gray-100 shadow-lg border border-gray-400">
             <div className="text-center mb-8">
               <HiUser className="w-12 h-12 mx-auto mb-4 text-sky-500" />
               <h2 className="text-3xl font-bold text-primary-text mb-4">핵심 가치</h2>
